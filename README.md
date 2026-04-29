@@ -179,4 +179,4 @@ This code is open source for academic usage under the GNU General Public License
 
 ## Contact
 
-For questions, please contact the repository maintainer.
+For questions, please contact Neelanjan Akuli (email: neel2021@stanford.edu).

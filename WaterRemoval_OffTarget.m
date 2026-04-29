@@ -7,7 +7,7 @@ addpath('cbrewer2')
 gpuD = gpuDevice;
 %% Site of Off-Target Flux Reduction in water film
 
-Xsuction = 1100; % [m]
+Xsuction = 1010; % [m]
 
 % choose one among: 1010 m, 1020 m, 1050 m, 1100 m
 

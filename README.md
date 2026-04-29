@@ -107,7 +107,7 @@ WaterRemoval_OffTarget.m
 Set the suction location near the top of the script:
 
 ```matlab
-Xsuction = 1100; % [m]
+Xsuction = 1010; % [m]
 ```
 
 Suggested values currently listed in the script are:

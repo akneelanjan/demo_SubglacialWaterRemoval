@@ -1,4 +1,4 @@
-# Subglacial Flowrate Reduction Models
+# Response of an idealized mountain glacier to subglacial flowrate reduction
 
 This repository contains MATLAB scripts for simulating how local water removal from the subglacial drainage system modifies basal drag and glacier speed in an idealized 2D cross section.
 

@@ -128,7 +128,7 @@ The off-target script currently uses a canal baseline with `N_canal = 50 kPa`, a
 filename = filepath+"OffTarget_Canal50kPa_Blip1333Pa_XSuction"+string(Xsuction)+".mat";
 ```
 
-If you change `Xsuction`, also update any manually named diagnostic variables in the AUC/basal-drag saving section if you want the variable names to match the case.
+While saving the AUC and the basal drag profile at the end of this code, make sure to uncomment the lines matching the exact case of your chosen value of `Xsuction`.
 
 ## Output
 
@@ -165,7 +165,7 @@ The coupled thermomechanical/free-boundary model is adapted from Ortholine v1.0:
 Suckale, J. and Elsworth, C. W.: An antiplane strain model for evaluating shear-margin stability (Ortholine v1.0), EGUsphere [preprint], https://doi.org/10.5194/egusphere-2026-67, 2026.
 ```
 
-Code repository for the original model:
+Code repository for Ortholine v1.0:
 
 ```text
 https://github.com/coopere/InstituteIceStream2D

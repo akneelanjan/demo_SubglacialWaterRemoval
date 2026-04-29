@@ -175,7 +175,7 @@ For use of this modified hydrology/intervention code, please also cite the assoc
 
 ## License
 
-Add a license before public release. Common options for academic research code include MIT, BSD-3-Clause, GPL-3.0, or an institutional license.
+This code is open source for academic usage under the GNU General Public License, version 3. (GPL-3.0)
 
 ## Contact
 

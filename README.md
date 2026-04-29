@@ -1,4 +1,4 @@
-# Glacier Response to Subglacial Flowrate Reduction
+# Subglacial Flowrate Reduction Models
 
 This repository contains MATLAB scripts for simulating how local water removal from the subglacial drainage system modifies basal drag and glacier speed in an idealized 2D cross section.
 
@@ -8,10 +8,10 @@ The coupled solutions for 2D ice speed and 2D ice temperature are solved followi
 
 ### Executable scripts
 
-- `v6Neel_2Dcvx_dim_OnTarget.m`  
+- `WaterRemoval_OnTarget.m`  
   Runs the on-target flowrate-reduction experiments. The intervention is colocated with the drainage feature whose effective pressure and basal strength are being modified.
 
-- `v6Neel_2Dcvx_dim_2SideCanals_OffTarget.m`  
+- `WaterRemoval_OffTarget.m`  
   Runs the off-target flux-reduction experiments. The script imposes a localized basal-strength perturbation at a prescribed off-target suction location in the water-film region, while retaining a central canal and two side canals.
 
 ### Input/output folders
@@ -71,7 +71,7 @@ cvx_setup
 Open:
 
 ```text
-v6Neel_2Dcvx_dim_OnTarget.m
+WaterRemoval_OnTarget.m
 ```
 
 Choose one drainage-mode case by uncommenting exactly one `load(...)` command in the input-file section. For example:
@@ -83,7 +83,7 @@ load("InputParameterFiles\Canal_50kPa_Baseline.mat");
 Then run:
 
 ```matlab
-v6Neel_2Dcvx_dim_OnTarget
+WaterRemoval_OnTarget
 ```
 
 Available on-target cases include sedimentary canals, R-channels, linked cavities, and water films. Each case is controlled by its corresponding `.mat` file in `InputParameterFiles/`.
@@ -101,7 +101,7 @@ save(filename)
 Open:
 
 ```text
-v6Neel_2Dcvx_dim_2SideCanals_OffTarget.m
+WaterRemoval_OffTarget.m
 ```
 
 Set the suction location near the top of the script:
@@ -119,7 +119,7 @@ Suggested values currently listed in the script are:
 Then run:
 
 ```matlab
-v6Neel_2Dcvx_dim_2SideCanals_OffTarget
+WaterRemoval_OffTarget
 ```
 
 The off-target script currently uses a canal baseline with `N_canal = 50 kPa`, a localized basal-strength perturbation of `N_wfblip = 1333 Pa`, and a Gaussian length scale `delta = 10 m`. The output file is saved automatically using the selected `Xsuction` value:
@@ -134,10 +134,10 @@ If you change `Xsuction`, also update any manually named diagnostic variables in
 
 Each script generates plots of:
 
-1. 2D ice speed field
-2. Ice surface speed profile
+1. 2D ice-speed field
+2. Ice-surface speed profile
 3. 2D temperature field
-4. Basal drag profile
+4. Basal-drag profile
 
 The scripts also save the final MATLAB workspace as a `.mat` file in `ResultsMatFiles/`.
 

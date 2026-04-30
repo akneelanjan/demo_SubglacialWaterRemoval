@@ -9,7 +9,7 @@ The coupled solutions for 2D ice speed and 2D ice temperature are solved followi
 ### Executable scripts
 
 - `WaterRemoval_OnTarget.m`  
-  Runs the on-target flowrate-reduction experiments. The intervention is colocated with the drainage feature whose effective pressure and basal strength are being modified.
+  Runs the experiments on on-target flowrate reduction. The water removal site is at the center of the bed, and co-located with the specific drainage mode whose effective pressure and basal strength are being modified.
 
 - `WaterRemoval_OffTarget.m`  
   Runs the off-target flux-reduction experiments. The script imposes a localized basal-strength perturbation at a prescribed off-target suction location in the water-film region, while retaining a central canal and two side canals.

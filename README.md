@@ -33,18 +33,13 @@ The coupled solutions for 2D ice speed and 2D ice temperature are solved followi
 Required:
 
 1. MATLAB
-2. [CVX for MATLAB](http://cvxr.com/cvx/)
-3. DistMesh-style mesh utilities, including `distmesh2d`, `dpoly`, `huniform`, and `boundedges`
-4. `cbrewer2`
-5. `iceColorMap.mat` for temperature plots
-
-The scripts currently call:
-
-```matlab
-gpuD = gpuDevice;
-```
-
-If no GPU is available, comment out this line. The rest of the scripts do not explicitly use GPU arrays.
+2. CVX Optimization Toolbox (http://cvxr.com/cvx/)
+  * Required for solving the convex optimization problem
+  * Free academic license available
+  * Install and run cvx_setup before use
+3. distmesh2d (http://persson.berkeley.edu/distmesh/)
+  * Unstructured triangular mesh generation
+  * Must be in MATLAB path4. `cbrewer2`
 
 ## Usage
 
@@ -59,6 +54,8 @@ lib/
 cbrewer2/
 iceColorMap.mat
 ```
+
+Make sure distmesh2D is installed and initialized in the MATLAB path.
 
 In MATLAB, make sure CVX is installed and initialized with:
 

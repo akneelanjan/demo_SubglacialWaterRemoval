@@ -34,12 +34,13 @@ Required:
 
 1. MATLAB
 2. CVX Optimization Toolbox (http://cvxr.com/cvx/)
-  * Required for solving the convex optimization problem
-  * Free academic license available
-  * Install and run cvx_setup before use
+    * Required for solving the convex optimization problem
+    * Free academic license available
+    * Install and run cvx_setup before use
 3. distmesh2d (http://persson.berkeley.edu/distmesh/)
-  * Unstructured triangular mesh generation
-  * Must be in MATLAB path4. `cbrewer2`
+    * Unstructured triangular mesh generation
+    * Must be in MATLAB path
+4. `cbrewer2` (https://www.mathworks.com/matlabcentral/fileexchange/58350-cbrewer2)
 
 ## Usage
 
@@ -55,9 +56,9 @@ cbrewer2/
 iceColorMap.mat
 ```
 
-Make sure distmesh2D is installed and initialized in the MATLAB path.
-
-In MATLAB, make sure CVX is installed and initialized with:
+* Make sure cbrewer2 is installed in MATLAB through File Exchange.
+* Make sure distmesh2D is installed and initialized in the MATLAB path.
+* In MATLAB, make sure CVX is installed and initialized with:
 
 ```matlab
 cvx_setup
@@ -162,13 +163,9 @@ The coupled thermomechanical/free-boundary model is adapted from Ortholine v1.0:
 Suckale, J. and Elsworth, C. W.: An antiplane strain model for evaluating shear-margin stability (Ortholine v1.0), EGUsphere [preprint], https://doi.org/10.5194/egusphere-2026-67, 2026.
 ```
 
-Code repository for Ortholine v1.0:
+Code repository for Ortholine v1.0: https://github.com/coopere/InstituteIceStream2D
 
-```text
-https://github.com/coopere/InstituteIceStream2D
-```
-
-For use of this modified hydrology/intervention code, please also cite the associated basal-anchoring manuscript once available.
+For use of this modified code with subglacial drainage representations, please also cite the associated manuscript once available.
 
 ## License
 
@@ -176,4 +173,4 @@ This code is open source for academic usage under the GNU General Public License
 
 ## Contact
 
-For questions, please contact Neelanjan Akuli (email: neel2021@stanford.edu).
+For questions, please contact the authors at neel2021@stanford.edu

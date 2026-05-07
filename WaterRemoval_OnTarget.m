@@ -4,7 +4,6 @@
 clear all; clc;
 addpath('lib')
 addpath('cbrewer2')
-gpuD = gpuDevice;
 
 %% Load one parameter file for a specific case of each Subglacial Drainage Mode
 

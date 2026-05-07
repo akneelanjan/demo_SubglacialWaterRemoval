@@ -37,7 +37,7 @@ Required:
     * Required for solving the convex optimization problem
     * Free academic license available
     * Install and run cvx_setup before use
-3. distmesh2d (http://persson.berkeley.edu/distmesh/)
+3. distmesh2d (http://persson.berkeley.edu/distmesh/ and https://github.com/popersson/DistMesh)
     * Unstructured triangular mesh generation
     * Must be in MATLAB path
 4. `cbrewer2` (https://www.mathworks.com/matlabcentral/fileexchange/58350-cbrewer2)
@@ -57,7 +57,8 @@ iceColorMap.mat
 ```
 
 * Make sure cbrewer2 is installed in MATLAB through File Exchange.
-* Make sure distmesh2D is installed and initialized in the MATLAB path.
+* Make sure distmesh2D is installed and set in the MATLAB path. 
+  distmesh2D GitHub repository with full instructions: https://github.com/popersson/DistMesh
 * In MATLAB, make sure CVX is installed and initialized with:
 
 ```matlab

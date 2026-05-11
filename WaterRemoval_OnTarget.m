@@ -2,51 +2,61 @@
 % Adjust bed properties for geometry and peak flow speed. Change driving force too.
 
 clear all; clc;
-addpath('lib')
+
+addpath('DistMesh-main')
+addpath(fullfile('DistMesh-main','src'));
+addpath(fullfile('DistMesh-main','examples'));
+fprintf('DistMesh paths added.\n');
+
 addpath('cbrewer2')
+load iceColorMap.mat
 
 %% Load one parameter file for a specific case of each Subglacial Drainage Mode
 
 %% On-Target flowrate reduction in Canal
 % Q = 0.005 m^3/s, N_c = 50 kPa --> Baseline
-load("InputParameterFiles\Canal_50kPa_Baseline.mat");
+%load(fullfile("InputParameterFiles","Canal_50kPa_Baseline.mat"));
 
 % Q = 0.004 m^3/s, N_c = 100 kPa
-%load("InputParameterFiles\Canal_100kPa.mat");
+%load(fullfile("InputParameterFiles","Canal_100kPa.mat"));
 
 % Q = 0.0025 m^3/s, N_c = 150 kPa
-%load("InputParameterFiles\Canal_150kPa.mat");
+%load(fullfile("InputParameterFiles","Canal_150kPa.mat"));
 
 % Q = 0.002 m^3/s, N_c = 200 kPa
-%load("InputParameterFiles\Canal_200kPa.mat");
+load(fullfile("InputParameterFiles","Canal_200kPa.mat"));
 
 %% On-Target flowrate reduction in R-Channel
 % Q = 0.086 m^3/s, N_c = 550 kPa --> Baseline
-%load("InputParameterFiles\RChannel_550kPa_Baseline.mat");
+%load(fullfile("InputParameterFiles","RChannel_550kPa_Baseline.mat"));
 
 % Q = 0.043 m^3/s, N_c = 520 kPa
-%load("InputParameterFiles\RChannel_520kPa.mat");
+%load(fullfile("InputParameterFiles","RChannel_520kPa.mat"));
 
 %% On-Target flowrate reduction in Linked Cavity
 % Q = 0.010 m^3/s, N_c = 250 kPa --> Baseline
-%load("InputParameterFiles\LinkedCavity_250kPa_Baseline.mat");
+%load(fullfile("InputParameterFiles","LinkedCavity_250kPa_Baseline.mat"));
 
 % Q = 0.005 m^3/s, N_c = 500 kPa
-%load("InputParameterFiles\LinkedCavity_500kPa.mat");
+%load(fullfile("InputParameterFiles","LinkedCavity_500kPa.mat"));
 
 %% On-Target flowrate reduction in Water Film
 % Q = Q_0 m^3/s, N_c = 4 kPa --> Baseline
-%load("InputParameterFiles\WaterFilm_4000Pa_Baseline.mat");
+%load(fullfile("InputParameterFiles","WaterFilm_4000Pa_Baseline.mat"));
 
 % Q = 0.7Q_0 m^3/s, N_c = 4.44 kPa
-%load("InputParameterFiles\WaterFilm_4444Pa.mat");
+%load(fullfile("InputParameterFiles","WaterFilm_4444Pa.mat"));
 
 % Q = 0.5Q_0 m^3/s, N_c = 5.33 kPa
-%load("InputParameterFiles\WaterFilm_5333Pa.mat");
+%load(fullfile("InputParameterFiles","WaterFilm_5333Pa.mat"));
 
 % Q = 0.1Q_0 m^3/s, N_c = 8 kPa
-%load("InputParameterFiles\WaterFilm_8000Pa.mat");
+%load(fullfile("InputParameterFiles","WaterFilm_8000Pa.mat"));
+%% Before proceeding, please name the specific mode and effective pressure case 
+% for saving the results of that specific case with the correct name
+% Naming format: Mode_000kPa
 
+modeCase = "Canal_200kPa";
 
 %% cbrewer2
 icespeed = cbrewer2('seq','RdPu',100);
@@ -65,9 +75,9 @@ factor1 = 1;
 %factor2 = 0.5;
 
 % Domain parameters
-%dx = 10;                     %dx: nominal grid spacing
-%vert_scale = 1;
-%dy = vert_scale*dx;
+dx = 10;                     %dx: nominal grid spacing
+vert_scale = 1;
+dy = vert_scale*dx;
 
 x_max = 2E3*factor1;
 y_max = 1000;
@@ -281,8 +291,6 @@ legend
 figure('Position',[10 10 1000 200])
 load iceColorMap
 colormap(iceColorMap)
-% tricontf(xy(:,1),xy(:,2),t,T,...
-%          [0,-5,-10,-15,-20,-25]);
 trisurf(t,xy(:,1),xy(:,2),T,T,...
        'edgecolor','none','facecolor','interp');
 %axis off
@@ -312,8 +320,6 @@ ylabel("Basal drag [kPa]", FontSize=16)
 legend
 
 %% Save results to .mat file
-filepath = "ResultsMatFiles\";
-filename = filepath+"HighRes_"+"LinkedCavity_"+"500"+"kPa.mat"; 
-% Change the drainage mode name and the specific effective pressure value here, to save that specific case
-
-save(filename)
+filepath = "ResultsMatFiles";
+%filename = fullfile(filepath,"HighRes_",modeCase,".mat");
+%save(filename)
